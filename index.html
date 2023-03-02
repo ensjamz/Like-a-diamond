@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Like-A-Diamond</title>
+	<style>
+		body {
+			background-color: #000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
+
+		.box {
+			width: 200px;
+			height: 200px;
+			position: relative;
+			transform: rotate(45deg);
+			background-color: orange;;
+			transition: all 7.2s ease-in-out;
+		}
+
+		.box:hover {
+			transform: rotate(5600deg) scale(3.3);
+		}
+
+		.box:before,
+		.box:after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			background-color: inherit;
+		}
+
+		.box:before {
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+		}
+
+		.box:after {
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+		}
+
+		.text1 {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(0deg);
+			color: black;
+			
+			font-size: 2em;
+			font-weight: bold;
+			cursor: pointer;
+			z-index: 1;
+			text-align: center;
+		}
+
+		.text1:hover {
+			text-decoration: underline;
+			color: BLUE;
+		}
+
+		.hidden {
+			display: none;
+			
+		}
+
+		.no {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: #fff;
+			color: white;
+			font-weight: bold;
+			z-index: 9;
+			transition: all .5s ease-in-out;
+			font-size: 1.5em;
+		}
+
+		.no.scale {
+			transform: translate(-50%, -50%) scale(20);
+			font-size: 50px;
+		}
+
+		.footer {
+			display: flex;
+			justify-content: space-between;
+			padding: 10px;
+			background-color: #333;
+			color: #fff;
+			font-size: 14px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+
+		.footer a {
+			color: #fff;
+			text-decoration: none;
+			margin-right: 10px;
+		}
+
+		.footer a:hover {
+			text-decoration: none;
+		}
+		
+.ethlist {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 5;
+  text-shadow: 1px 1px orange, -1px -1px orange, 1px -1px orange, -1px 1px orange;
+  font-size: 36px;
+  border-collapse: collapse;
+}
+
+}
+
+
+
+}
+}
+
+}
+	</style>
+</head>
+<body>
+   <table class="ethlist">
+  <tr>
+    <td>click.to.see.my.ENS.names.eth</td>
+  </tr>
+</table>
+    
+
+<script>
+	const text = document.querySelector('.ethlist');
+	const words = ["golfland.eth",'fishnet.eth', 'rg3.eth', 'slams.eth', 'nolimit.eth', 'supa-fast.eth','more soon...'];
+
+	text.addEventListener('click', () => {
+		const index = Math.floor(Math.random() * words.length);
+		text.innerHTML = words[index];
+	});
+</script>
+
+    
+	<div class="box"></div>
+	<div class="text1">😎</div>
+	<div class="no hidden">Radvoice.eth</div>
+	
+	
+	<footer class="footer">
+		<a href="https://twitter.com/Radvoice1">Twitter</a>
+		<a href="https://radvoice.eth.limo/">About</a>
+	</footer>
+	
+	
+	<script>
+		const text1 = document.querySelector('.text1');
+		const no = document.querySelector('.no');
+
+		text1.addEventListener('click', () => {
+			no.style.fontSize = `${Math.floor(Math.random() * 20) + 1}px`;
+			no.style.top = `${Math.floor(Math.random() * 90) + 1}%`;
+			no.style.left = `${Math.floor(Math.random() * 90) + 1}%`;
+			no.classList.remove('hidden');
+			no.classList.add('scale');
+			
+
+			setTimeout(() => {
+				no.classList.add('hidden');
+				no.classList.remove('scale');
+			}, 2000);
+		});
+	</script>
+</body>
+</html>
